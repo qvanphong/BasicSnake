@@ -1,4 +1,4 @@
-package com.phong.game;
+package com.phong.frame;
 
 import com.phong.graphics.Screen;
 
@@ -10,6 +10,7 @@ public class Frame  extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Snake");
         setResizable(false);
+        setBackground(Color.DARK_GRAY);
 
     init();
     }
