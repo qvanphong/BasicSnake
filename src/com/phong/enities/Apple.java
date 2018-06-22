@@ -29,7 +29,7 @@ public class Apple {
 
     public void draw(Graphics g){
         g.setColor(Color.RED);
-        g.fillRect(xCoor * width, yCoor*height, width, height);
+        g.fillRect(xCoor * width +1, yCoor*height +1, width-1, height-1);
 
     }
 }
