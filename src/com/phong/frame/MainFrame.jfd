@@ -3,23 +3,94 @@ JFDML JFormDesigner: "6.0.3.0.150" Java: "1.8.0_152-release" encoding: "UTF-8"
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
-		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridLayout ) {
-			"columns": 1
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {comp button1:::p:192:p, space :0:0:p, comp button2:::p:192:p}, comp button3:::p:385:p}"
+			"$verticalGroup": "par l {seq {par l {comp button1:::p:130:p, comp button2:::p:130:p}, comp button3:::p:135:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
-				"text": "Touching Wall"
+				"text": "Wall Block"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "touchingWallActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
-				"text": "Inifinite Wall"
+				"text": "No Wall"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "infiniteWallActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "Customize Game"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "CustomizeActionPerformed", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 400, 300 )
+		} )
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par t {seq t {comp btnOk:::p:62:p, space :65:65:p}, par l {seq l {comp lblScore:::p::p, space :p:16:p, comp tfScore:::p:45:p, space :::p, comp label6:::p::p}, seq l {comp lblSpeed:::p::p, space :p:13:p, comp tfSpeed:::p:45:p, space :::p, comp label5:::p::p}, seq {comp lblSize:::p:37:p, space u:::p, comp tfSize:::p:45:p, space :::p, comp label4:::p::p}, seq l {comp lblGameMode:::p::p, space u:::p, comp tfGamemode:::p:40:p}, comp label8::l:p::p}}, space :::x}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :::p, par b {comp lblSize::b:p::p, comp tfSize::b:p::p, comp label4::b:p::p}}, seq l {space :p:36:p, par b {comp tfSpeed::b:p::p, comp label5::b:p::p, comp lblSpeed::b:p::p}}}, space :p:6:p, par b {comp tfScore::b:p::p, comp label6::b:p::p, comp lblScore::b:p::p}, space s:::p, par b {comp lblGameMode::b:p::p, comp tfGamemode::b:p::p}, space :::p, comp label8:::p::p, space u:::p, comp btnOk:::p::p, space ::25:x}}"
+		} ) {
+			name: "dialog1"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblSize"
+				"text": "Size:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblSpeed"
+				"text": "Speed:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblScore"
+				"text": "Score:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfSize"
+				"text": "5"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfSpeed"
+				"text": "25"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfScore"
+				"text": "1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "default: 5, 1 < size <= 10"
+				"font": &Font0 new java.awt.Font( "Arial", 0, 9 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "default: 25, lower is faster"
+				"font": #Font0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "default: 1, 1 <= score <= 10"
+				"font": #Font0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblGameMode"
+				"text": "Gamemode:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfGamemode"
+				"text": "0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "0 is wall block, 1 is no wall."
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnOk"
+				"text": "OK"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okBtnActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 95, 310 )
+			"size": new java.awt.Dimension( 240, 235 )
 		} )
 	}
 }

@@ -11,8 +11,14 @@ public class Frame  extends JFrame {
         setTitle("Snake");
         setResizable(false);
         setBackground(Color.DARK_GRAY);
-
-    init();
+        init();
+    }
+    public  Frame(int size, int maxTicks, int perScore){
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Snake");
+        setResizable(false);
+        setBackground(Color.DARK_GRAY);
+        init(size,  maxTicks,  perScore);
     }
 
     public void init(){
@@ -23,8 +29,12 @@ public class Frame  extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        new Frame();
+    public void init(int size, int maxTicks, int perScore){
+        setLayout(new GridLayout(1, 1, 0 ,0));
+        Screen s = new Screen( size,  maxTicks,  perScore);
+        add(s);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 }
